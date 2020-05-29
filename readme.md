@@ -4,7 +4,7 @@
 - [Firebase Console](https://console.firebase.google.com)
 - [Cloud Console - Functions](https://console.cloud.google.com/functions)
 
-Important: Firebase Hosting supports Cloud Functions in us-central1 only (2020).
+**Important:** Firebase Hosting supports Cloud Functions in us-central1 only (2020).
 
 ### Database
 #### Add 
@@ -68,7 +68,9 @@ after modifications
 - https://stackoverflow.com/questions/24098461/nodemailer-gmail-what-exactly-is-a-refresh-token-and-how-do-i-get-one/24123550
 - https://masashi-k.blogspot.com/2013/06/sending-mail-with-gmail-using-xoauth2.html
 - https://blog.mailtrap.io/nodemailer-gmail/
+
 Database Rules
+
 - https://fireship.io/snippets/firestore-rules-recipes/
 - https://stackoverflow.com/questions/51916848/achieving-granular-data-validation-in-firestore-document?rq=1
 - https://softauthor.com/firestore-security-rules

@@ -52,11 +52,11 @@ const sanitize = (req) => {
 
 exports.contact = functions.https.onRequest((req, res) => cors(req, res, () => {
   if (req.method !== 'POST') {
-    return res.status(403).send('Forbidden!');
+    return res.status(405).send('Method Not Allowed');
   }
 
   if (isSpam(req)) {
-    return res.status(403).send('Spam');
+    return res.status(403).send('Forbidden');
   }
 
   const sanitized = sanitize(req);
