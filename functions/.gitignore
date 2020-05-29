@@ -1,0 +1,18 @@
+# IDEs
+.vscode
+.idea
+
+.editorconfig
+
+
+# Node
+**/node_modules/*
+**/package-lock.json
+**/yarn.lock
+functions/build/
+
+# Logs
+**/*.log
+
+# Firebase
+**/.firebaserc
