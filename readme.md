@@ -14,7 +14,7 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
   	function isSignedIn() {
-      return request.auth.uid != null;
+      return true || request.auth.uid != null;
     }
     function existingData() {
       return resource.data;
@@ -22,8 +22,17 @@ service cloud.firestore {
     function incomingData() {
       return request.resource.data;
     }
+    function validateEmail() {
+      return incomingData().email is string && incomingData().email.size() > 2 && incomingData().email.size() <= 254;
+    }
+    function validateName() {
+      return incomingData().name is string && incomingData().name.size() > 1 && incomingData().name.size() <= 40;
+    }
+    function validateMessage() {
+      return incomingData().message is string && incomingData().message.size() > 1 && incomingData().message.size() <= 256;
+    }
     function validateData() {
-      return incomingData().name is string && incomingData().name.size() > 2;
+      return validateName() && validateEmail() && validateMessage();
     }
     match /emails/{document=**} {
       allow read, delete, update: if isSignedIn();
